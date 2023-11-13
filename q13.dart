@@ -1,13 +1,8 @@
 import 'dart:io';
 
 void main(List<String> args) {
-  print('Enter your word');
-  String input = stdin.readLineSync()!.toLowerCase();
-  String revInput = input.split('').reversed.join('');
-
-  if (input == revInput) {
-    print('Palindrome');
-  } else {
-    print('Not Palindrome');
-  }
+  print('input the string');
+  String str = stdin.readLineSync()!.toLowerCase();
+  String revstr = str.split('').reversed.join('');
+  (str == revstr) ? print('pallindrom') : print('not pallindrom');
 }

@@ -1,33 +1,27 @@
 import 'dart:io';
 
 void main(List<String> args) {
-  print('Enter the size of first array');
-  var input1 = stdin.readLineSync();
-  int n1 = int.parse(input1!);
-  List<String> list1 = [];
-  print('Enter the elements');
-  for (var i = 0; i < n1; i++) {
-    list1.insert(i, '${stdin.readLineSync()}');
+  print("enter the size of array");
+  int n = int.parse(stdin.readLineSync()!);
+  List<int> list1 = [];
+  print("Input the elements to the first array");
+  for (var i = 0; i < n; i++) {
+    list1.insert(i, int.parse(stdin.readLineSync()!));
   }
-  print('1st List is $list1');
-  print('Enter the size of second array');
-  var input2 = stdin.readLineSync();
-  int n2 = int.parse(input2!);
-  List<String> list2 = [];
-  print('Enter the elements');
-  for (var i = 0; i < n2; i++) {
-    var item1 = stdin.readLineSync();
-    list2.add('$item1');
+  print(list1);
+  List<int> list2 = [];
+  print("Input the elements to the Second array");
+  for (var i = 0; i < n; i++) {
+    list2.insert(i, int.parse(stdin.readLineSync()!));
   }
-  print('2nd List is $list2');
+  stdout.write(list2);
   var temp;
-  for (var i = 0; i < n1; i++) {
+  for (var i = 0; i < n; i++) {
     temp = list1[i];
     list1[i] = list2[i];
     list2[i] = temp;
   }
-  print('After swapping lists is');
-
-  print('list 1 is $list1');
-  print('list 2 is $list2');
+  print("\n After swapping elements :");
+  print(list1);
+  print(list2);
 }

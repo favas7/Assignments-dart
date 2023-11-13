@@ -1,25 +1,23 @@
 import 'dart:io';
 
 void main(List<String> args) {
-  print('Enter the size of the list');
+  print("Enter the size of arry");
   int n = int.parse(stdin.readLineSync()!);
-  List<String> list = [];
-  print('Enter the elements');
+  List<int> list1 = [];
+  print("Enter the values to the array");
   for (var i = 0; i < n; i++) {
-    list.add('${stdin.readLineSync()}');
+    list1.insert(i, int.parse(stdin.readLineSync()!));
   }
+  print("list before sorting $list1");
   var temp;
-  print('Before sorting list is $list');
-  for (var i = 0; i < n; i++) {
+  for (var i = 0; i < n - 1; i++) {
     for (var j = i + 1; j < n; j++) {
-      int item1 = int.parse(list[i]);
-      int item2 = int.parse(list[j]);
-      if (item1 < item2) {
-        temp = list[i];
-        list[i] = list[j];
-        list[j] = temp;
+      if (list1[i] < list1[j]) {
+        temp = list1[i];
+        list1[i] = list1[j];
+        list1[j] = temp;
       }
     }
   }
-  print('Sorted list is $list');
+  print('After sorting = $list1');
 }

@@ -1,21 +1,19 @@
 import 'dart:io';
 
 void main(List<String> args) {
-  print('Enter the size of list');
-  var input1 = stdin.readLineSync();
-  int n = int.parse(input1!);
-  List<String> list = [];
-  print('Enter the elements');
+  print("input the limit");
+  int n = int.parse(stdin.readLineSync()!);
+  List<int> list1 = [];
   for (var i = 0; i < n; i++) {
-    list.add('${stdin.readLineSync()}');
+    list1.insert(i, int.parse(stdin.readLineSync()!));
   }
-  print('List is $list');
-  int item, count = 0;
+  print('The entered value is = $list1');
+  var count;
+  count = 0;
   for (var i = 0; i < n; i++) {
-    item = int.parse(list[i]);
-    if (item % 2 == 0) {
+    if (list1[i] % 2 != 0) {
       count++;
     }
   }
-  print('Numbers of even number is $count');
+  print('number of odd number is = $count');
 }
